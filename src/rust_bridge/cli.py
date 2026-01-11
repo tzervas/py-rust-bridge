@@ -4,7 +4,6 @@ from pathlib import Path
 from typing import Any
 
 import click
-import yaml
 from jinja2 import Environment
 
 # Handle tomllib import for different Python versions
