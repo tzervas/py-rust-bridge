@@ -5,7 +5,7 @@ from typing import Any
 
 import click
 import yaml
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment
 
 # Handle tomllib import for different Python versions
 _tomllib: Any  # type: ignore[misc]
