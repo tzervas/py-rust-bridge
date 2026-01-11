@@ -1,11 +1,19 @@
 """Command-line interface for rust-bridge."""
 
-import click
 from pathlib import Path
-import yaml
-from jinja2 import Environment, FileSystemLoader
-import tomllib
-import tomli
+from typing import Any
+
+import click
+from jinja2 import Environment
+
+# Handle tomllib import for different Python versions
+_tomllib: Any  # type: ignore[misc]
+try:
+    import tomllib  # type: ignore[import-not-found]
+    _tomllib = tomllib
+except ImportError:
+    import tomli as tomllib  # type: ignore[import-not-found]
+    _tomllib = tomllib
 
 
 @click.group()
@@ -17,8 +25,15 @@ def main():
 
 @main.command()
 @click.argument("pyproject_path", type=click.Path(exists=True))
-@click.option("--output", "-o", type=click.Path(), help="Output directory for generated bindings")
-@click.option("--template", "-t", type=click.Choice(["pyo3", "native", "cbindgen"]), default="pyo3")
+@click.option(
+    "--output", "-o", type=click.Path(), help="Output directory for generated bindings"
+)
+@click.option(
+    "--template",
+    "-t",
+    type=click.Choice(["pyo3", "native", "cbindgen"]),
+    default="pyo3",
+)
 def generate_bindings(pyproject_path, output, template):
     """Generate Rust-Python bindings from pyproject.toml."""
     pyproject_file = Path(pyproject_path)
@@ -29,16 +44,14 @@ def generate_bindings(pyproject_path, output, template):
 
     # Read pyproject.toml
     with open(pyproject_file, "rb") as f:
-        if hasattr(f, "read"):  # Python 3.11+
-            config = tomllib.load(f)
-        else:
-            config = tomli.load(f)
+        config = _tomllib.load(f)
 
     project_name = config.get("project", {}).get("name", "unknown")
     click.echo(f"📦 Project: {project_name}")
 
     # Create output directory
     output_path.mkdir(parents=True, exist_ok=True)
+    (output_path / "src").mkdir(parents=True, exist_ok=True)
 
     if template == "pyo3":
         generate_pyo3_bindings(config, output_path)
@@ -52,7 +65,7 @@ def generate_bindings(pyproject_path, output, template):
 
 def generate_pyo3_bindings(config, output_path):
     """Generate PyO3 bindings."""
-    lib_rs_content = '''use pyo3::prelude::*;
+    lib_rs_content = """use pyo3::prelude::*;
 
 #[pyfunction]
 fn add(a: i32, b: i32) -> PyResult<i32> {
@@ -64,9 +77,9 @@ fn {{ project_name|replace("-", "_") }}(m: &Bound<'_, PyModule>) -> PyResult<()>
     m.add_function(wrap_pyfunction!(add, m)?)?;
     Ok(())
 }
-'''
+"""
 
-    cargo_toml_content = '''[package]
+    cargo_toml_content = """[package]
 name = "{{ project_name|replace("-", "_") }}"
 version = "{{ version }}"
 edition = "2021"
@@ -77,9 +90,9 @@ crate-type = ["cdylib"]
 
 [dependencies]
 pyo3 = { version = "0.22", features = ["extension-module"] }
-'''
+"""
 
-    pyo3_setup = '''
+    pyo3_setup = """
 from setuptools import setup
 from setuptools_rust import RustExtension
 
@@ -90,7 +103,7 @@ setup(
     setup_requires=["setuptools-rust"],
     zip_safe=False,
 )
-'''
+"""
 
     env = Environment()
     template_lib = env.from_string(lib_rs_content)
@@ -120,7 +133,7 @@ def generate_native_bindings(config, output_path):
 
 def generate_cbindgen_config(config, output_path):
     """Generate cbindgen configuration."""
-    cbindgen_toml = '''[parse]
+    cbindgen_toml = """[parse]
 parse_deps = true
 include = ["your_crate"]
 
@@ -132,7 +145,7 @@ rename_fields = "SnakeCase"
 
 [enum]
 rename_variants = "ScreamingSnakeCase"
-'''
+"""
 
     with open(output_path / "cbindgen.toml", "w") as f:
         f.write(cbindgen_toml)
