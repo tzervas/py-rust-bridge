@@ -1,7 +1,7 @@
 """Tests for rust-bridge CLI."""
 
-import pytest
 from click.testing import CliRunner
+
 from rust_bridge.cli import main
 
 
