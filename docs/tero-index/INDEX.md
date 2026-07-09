@@ -3,13 +3,13 @@
 > **Honesty:** Empirical/Declared — lite heading/line heuristic over markdown in py-rust-bridge via tero-mcp/scripts/generate_lite_index.py; source files are ground truth. Generated 2026-07-09.
 > Use this index to find where to Read, not as authoritative ground truth.
 
-- **Items:** 16
+- **Items:** 21
 - **Flagged:** 0
 - **item_tag:** `Empirical/Declared`
 - **Machine index:** [`index.json`](./index.json)
 - **Manifest:** [`MANIFEST.toml`](./MANIFEST.toml)
 
-## doc (16 entries)
+## doc (21 entries)
 
 | Anchor | Kind | Id | Title | File:Line | Status | Summary |
 |---|---|---|---|---|---|---|
@@ -19,6 +19,7 @@
 | `agents--working-with-cabal-devmelopner-agent-tool` | section | — | Working with cabal-devmelopner agent tool | `AGENTS.md:24` | — | This project is prepared for integration: |
 | `agents--local-checks` | section | — | Local checks | `AGENTS.md:36` | — | Look for: |
 | `agents--further-reading` | section | — | Further reading | `AGENTS.md:44` | — | - README.md |
+| `agents--hygiene-tero-landing-chore-tero-index-cabal-ready-2026-07-09-appended` | section | — | Hygiene + Tero landing (chore/tero-index-cabal-ready, 2026-07-09 appended) | `AGENTS.md:54` | — | Tero-first (via /root/git/scripts/tero.sh identify + textsearch "chore tero hygiene check ROADMAP scaffolding" + cites to AGENTS local-checks, tero-index, read… |
 | `readme` | other | — | py-rust-bridge | `README.md:1` | — | Python-Rust interoperability tools and FFI helpers for seamless language integration. |
 | `readme--installation` | section | — | Installation | `README.md:5` | — | pip install py-rust-bridge |
 | `readme--usage` | section | — | Usage | `README.md:11` | — | Generate PyO3 bindings from pyproject.toml: |
@@ -29,4 +30,8 @@
 | `readme--run-tests` | other | — | Run tests | `README.md:46` | — | uv run pytest |
 | `readme--format-code` | other | — | Format code | `README.md:49` | — | uv run black src/ |
 | `readme--license` | section | — | License | `README.md:54` | — | MIT License - see [LICENSE](LICENSE) for details. |
+| `roadmap` | note | — | py-rust-bridge — Roadmap | `docs/ROADMAP.md:1` | Scaffolding / hygiene (2026-07-09) | Status: Scaffolding / hygiene (2026-07-09) |
+| `roadmap--waves-minimal-for-scaffolding` | section | — | Waves (minimal for scaffolding) | `docs/ROADMAP.md:9` | — | - Add scripts/check.sh modeled on search-box/cabal (uv if present, ruff/black, pytest, tero index gen) |
+| `roadmap--wave-h-hygiene-tero-closure-this-chore` | section | — | Wave H — Hygiene & Tero closure (this chore) | `docs/ROADMAP.md:11` | — | - Add scripts/check.sh modeled on search-box/cabal (uv if present, ruff/black, pytest, tero index gen) |
+| `roadmap--wave-p-polish-integration` | section | — | Wave P — Polish & Integration | `docs/ROADMAP.md:17` | — | - Full cabal-devmelopner + tero usage examples |
 
