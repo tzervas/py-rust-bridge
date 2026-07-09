@@ -10,9 +10,11 @@ from jinja2 import Environment
 _tomllib: Any  # type: ignore[misc]
 try:
     import tomllib  # type: ignore[import-not-found]
+
     _tomllib = tomllib
 except ImportError:
     import tomli as tomllib  # type: ignore[import-not-found]
+
     _tomllib = tomllib
 
 
@@ -25,9 +27,7 @@ def main():
 
 @main.command()
 @click.argument("pyproject_path", type=click.Path(exists=True))
-@click.option(
-    "--output", "-o", type=click.Path(), help="Output directory for generated bindings"
-)
+@click.option("--output", "-o", type=click.Path(), help="Output directory for generated bindings")
 @click.option(
     "--template",
     "-t",
