@@ -1,0 +1,108 @@
+{
+  "generated": "Empirical/Declared — lite heading/line heuristic over markdown in py-rust-bridge via tero-mcp/scripts/generate_lite_index.py; source files are ground truth. Generated 2026-07-09.",
+  "item_tag": "Empirical/Declared",
+  "siblings": [],
+  "items": [
+    {
+      "anchor": "readme",
+      "family": "doc",
+      "kind": "other",
+      "title": "py-rust-bridge",
+      "file": "README.md",
+      "line": 1,
+      "tag": "Empirical/Declared",
+      "summary": "Python-Rust interoperability tools and FFI helpers for seamless language integration."
+    },
+    {
+      "anchor": "readme--installation",
+      "family": "doc",
+      "kind": "section",
+      "title": "Installation",
+      "file": "README.md",
+      "line": 5,
+      "tag": "Empirical/Declared",
+      "summary": "pip install py-rust-bridge"
+    },
+    {
+      "anchor": "readme--usage",
+      "family": "doc",
+      "kind": "section",
+      "title": "Usage",
+      "file": "README.md",
+      "line": 11,
+      "tag": "Empirical/Declared",
+      "summary": "Generate PyO3 bindings from pyproject.toml:"
+    },
+    {
+      "anchor": "readme--features",
+      "family": "doc",
+      "kind": "section",
+      "title": "Features",
+      "file": "README.md",
+      "line": 25,
+      "tag": "Empirical/Declared",
+      "summary": "- PyO3 Bindings Generation: Automatic generation of PyO3 Rust extensions from Python project metadata"
+    },
+    {
+      "anchor": "readme--dependencies",
+      "family": "doc",
+      "kind": "section",
+      "title": "Dependencies",
+      "file": "README.md",
+      "line": 32,
+      "tag": "Empirical/Declared",
+      "summary": "- Compatible with PyO3 (Apache-2.0/MIT dual license)"
+    },
+    {
+      "anchor": "readme--development",
+      "family": "doc",
+      "kind": "section",
+      "title": "Development",
+      "file": "README.md",
+      "line": 38,
+      "tag": "Empirical/Declared",
+      "summary": "This project uses [uv](https://github.com/astral-sh/uv) for dependency management."
+    },
+    {
+      "anchor": "readme--install-dependencies",
+      "family": "doc",
+      "kind": "other",
+      "title": "Install dependencies",
+      "file": "README.md",
+      "line": 43,
+      "tag": "Empirical/Declared",
+      "summary": "uv sync"
+    },
+    {
+      "anchor": "readme--run-tests",
+      "family": "doc",
+      "kind": "other",
+      "title": "Run tests",
+      "file": "README.md",
+      "line": 46,
+      "tag": "Empirical/Declared",
+      "summary": "uv run pytest"
+    },
+    {
+      "anchor": "readme--format-code",
+      "family": "doc",
+      "kind": "other",
+      "title": "Format code",
+      "file": "README.md",
+      "line": 49,
+      "tag": "Empirical/Declared",
+      "summary": "uv run black src/"
+    },
+    {
+      "anchor": "readme--license",
+      "family": "doc",
+      "kind": "section",
+      "title": "License",
+      "file": "README.md",
+      "line": 54,
+      "tag": "Empirical/Declared",
+      "summary": "MIT License - see [LICENSE](LICENSE) for details."
+    }
+  ],
+  "flagged": []
+}
