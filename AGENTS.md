@@ -68,3 +68,12 @@ Run `./scripts/check.sh` (or --fix/--quick) before PRs. Use cabal --use-tero fro
 
 Tero cite: agents--hygiene-tero-landing-chore-2026-07-09
 
+## Semver + Releases (2026-07-10 appended, per user: toolchain/dev support first)
+
+This is supportive tooling extracted from mycelium (read-only clone at /root/git/isolated/mycelium, perms 555 to prevent borking).
+Language/project agnostic dev helper (py-rust bridge for porting/extraction).
+Baseline v0.1.0 (no prior tags; versions unestablished).
+Process: local build (uv/cargo), hygiene, append-only docs citing plan.md, tero, extraction (copy only), local podman GHCR (no Actions).
+No mods to mycelium core (decomposed separately); only supportive easily-ported.
+
+Cites: plan.md (semver writ large), user "starting with toolchain first and dev support", "only the tooling... in rust still... clone copy read only".

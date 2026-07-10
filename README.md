@@ -53,4 +53,6 @@ uv run isort src/
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) for details.
+MIT License - see [LICENSE](LICENSE) for details.## Semver baseline (2026-07-10)
+v0.1.0 for py-rust-bridge (extracted supportive tooling from mycelium, read-only source).
+See plan and AGENTS for details, local GHCR pref.
