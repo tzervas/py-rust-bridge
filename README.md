@@ -1,5 +1,10 @@
 # py-rust-bridge
 
+<!-- FLEET-BADGES:BEGIN -->
+[![CI](https://github.com/tzervas/py-rust-bridge/actions/workflows/fleet-ci.yml/badge.svg?branch=main)](https://github.com/tzervas/py-rust-bridge/actions/workflows/fleet-ci.yml?query=branch%3Amain)
+[![Security](https://github.com/tzervas/py-rust-bridge/actions/workflows/fleet-security.yml/badge.svg?branch=main)](https://github.com/tzervas/py-rust-bridge/actions/workflows/fleet-security.yml?query=branch%3Amain)
+<!-- FLEET-BADGES:END -->
+
 Python-Rust interoperability tools and FFI helpers for seamless language integration.
 
 ## Installation
